@@ -28,8 +28,8 @@ npm-debug.log*
 /controlador
 /js
 #/plataforma/cliente/code
-/plataforma/cliente/codeqr
-/plataforma/cliente/controlador
+#/plataforma/cliente/codeqr
+#/plataforma/cliente/controlador
 #/plataforma/cliente/fpdf
 #/plataforma/cliente/includes
 #/plataforma/cliente/mail
