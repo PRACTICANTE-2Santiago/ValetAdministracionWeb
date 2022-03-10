@@ -1,0 +1,358 @@
+/*Gris: #444
+ * Azul: #1a9bca
+ * */
+
+/*Principales*/
+@font-face{
+	font-family:"whatsapp_emoticons";
+	src:url('whatsapp_emoticons.ttf') format('truetype');
+}
+
+body{
+	background: #444;
+	font-family: "Century Gothic";
+	color: #FFF;
+	padding-top:80px;
+}
+
+.login{
+	margin-bottom:100px;
+}
+
+.logo-login{
+	margin:auto;
+	margin-bottom:10px;
+}
+
+/*Navegacion*/
+
+@media (max-width: 1920px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text, .navbar-left {
+        float: none!important;
+        margin:5px -15px;
+		padding:5px 15px;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+        overflow-y:auto!important;
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+    
+    #media{
+    	margin-left: -10px;
+    }
+}
+
+a.navbar-brand{
+	padding:10px;
+	height:70px;
+}
+
+.navbar-brand img{
+	height:50px;
+	width:auto; 
+	margin:auto;
+}
+
+.navbar{
+	min-height:70px;
+}
+
+.navbar-toggle{
+	margin:18px 15px 18px 5px;
+}
+
+.navbar-text{
+	margin:5px -15px;
+	padding:5px 15px;
+}
+
+.nav-divider{
+	margin: 5px auto;
+	border-top: 1px solid #101010;
+}
+
+.list-group-item>.badge{
+	background-color: #1a9bca;
+}
+
+/* Navegacion Interna */
+
+.nav-tabs{
+	border-bottom:1px solid #333;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:hover, .nav-tabs>li>a:focus{
+	color:#FFF;
+	text-decoration:none;
+	background-color:transparent;
+	border-color:transparent;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+	color:#FFF;
+	background-color:#101010;
+	border:solid 1px #212121;
+	border-bottom-color:transparent;
+	cursor:default;
+}
+
+/* Efecto Container */
+
+.container-fluid{
+	-webkit-animation: abre 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: abre 0.5s; /* Firefox < 16 */
+    -ms-animation: abre 0.5s; /* Internet Explorer */
+    -o-animation: abre 0.5s; /* Opera < 12.1 */
+    animation: abre 0.5s;
+}
+
+@keyframes abre {
+	from { transform:scale(0.5); }
+    to { transform:scale(1.0); }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes abre {
+    from { transform:scale(0.5); }
+    to { transform:scale(1.0); }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes abre {
+    from { transform:scale(0.5); }
+    to { transform:scale(1.0); }
+}
+
+/* Internet Explorer */
+@-ms-keyframes abre {
+    from { transform:scale(0.5); }
+    to { transform:scale(1.0); }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes abre {
+    from { transform:scale(0.5); }
+    to { transform:scale(1.0); }
+}
+
+/*Shortcuts*/
+
+.btn-alerta{
+	color:#000;
+	background-color: #FCFC4C;
+	border-color: #FCFC4C;
+}
+
+/*Elementos del dashboard*/
+
+
+/*Mensajes Ticket*/
+
+.panel-body{
+	padding-bottom: 100px;
+	color:#FFF;
+}
+
+.panel-body>blockquote>footer{
+	color:#EEE;
+}
+
+.panel-body>blockquote{
+	border-color:#444;
+}
+
+.panel-body>.blockquote-reverse{
+	background-color:#5cb85c;
+	border-color:#444;
+}
+
+.facturas{
+	color:#000;
+}
+
+.noticia{
+	color:#000;
+	padding-bottom: 15px;
+}
+
+.lineaPunteada{
+	font-size: 10px; color: black; border-bottom: 1px dotted #CCC;
+}
+
+#mychart{
+	width: 280px;
+	height: 140px;
+}
+
+@media (max-width: 500px) {
+	.contenedor-brand>.contenedor-brand>img{
+		height:25px;
+		width:auto;
+		margin-top:20px;
+	}
+}
+
+@media (min-width: 501px) {
+	.contenedor-brand>.contenedor-brand>img{
+		height:90px;
+		width:auto;
+	}
+}
+
+.iconos-whatsapp{
+	font-family: "whatsapp_emoticons";
+	font-size: 1.5em;
+	color:#fff;
+}
+.iconos-whatsapp:hover{
+	font-family: "whatsapp_emoticons";
+	font-size: 1.5em;
+	color:#fff;
+}
+.iconos-whatsapp:focus{
+	font-family: "whatsapp_emoticons";
+	font-size: 1.5em;
+	color:#fff;
+}
+/*@media (max-width: 1750px) {
+	#media{
+		margin-left: 0px;
+	}
+}
+@media (max-width: 1650px) {
+	#media{
+		margin-left: 10px;
+	}
+}
+@media (max-width: 1550px) {
+	#media{
+		margin-left: 20px;
+	}
+}
+@media (max-width: 1450px) {
+	#media{
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1350px) {
+	#media{
+		margin-left: 40px;
+	}
+}
+@media (max-width: 1350px) {
+	#media{
+		margin-left: 40px;
+	}
+}
+@media (max-width: 1200px) {
+	#media{
+		margin-left: 50px;
+	}
+}
+@media (max-width: 1180px) {
+	#media{
+		margin-left: -10px;
+	}
+}
+@media (max-width: 1080px) {
+	#media{
+		margin-left: 0px;
+	}
+}
+@media (max-width: 980px) {
+	#media{
+		margin-left: -80px;
+	}
+}
+@media (max-width: 880px) {
+	#media{
+		margin-left: -60px;
+	}
+}
+@media (max-width: 800px) {
+	#media{
+		margin-left: -40px;
+	}
+}
+@media (max-width: 750px) {
+	#media{
+		margin-left: -20px;
+	}
+}
+@media (max-width: 650px) {
+	#media{
+		margin-left: 0px;
+	}
+}
+@media (max-width: 580px) {
+	#media{
+		margin-left: 10px;
+	}
+}
+@media (max-width: 520px) {
+	#media{
+		margin-left: 20px;
+	}
+}
+@media (max-width: 500px) {
+	#media{
+		margin-left: 30px;
+	}
+}
+@media (max-width: 450px) {
+	#media{
+		margin-left: 50px;
+	}
+}
+@media (max-width: 380px) {
+	#media{
+		margin-top: 20px;
+		margin-left: -50px;
+	}
+}
+@media (max-width: 350px) {
+	#media{
+		margin-top: 20px;
+		margin-left: -45px;
+	}
+}
+@media (max-width: 320px) {
+	#media{
+		margin-top: 20px;
+		margin-left: -38px;
+	}
+}*/
+
+
+
