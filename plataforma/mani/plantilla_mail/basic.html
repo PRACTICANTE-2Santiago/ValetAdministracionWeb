@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <link rel="stylesheet" type="text/css" href="https://residencial.linkom.mx/plantilla_mail/stylesheets/email.css" />
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+    <center style="width: 100%; background-color: #222222;">
+        <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            <!--            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.-->
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+
+
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <img src="https://linkom.mx/cotizaciones/plataforma/man/plantilla_mail/stylesheets/mailheader.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="500px">
+                        <tr>
+                            <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; height:200px;">
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">{USERNAME}</h1>
+                                <p style="margin: 0 0 10px;">{SUBJECT}</p>
+                                <br>
+                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+
+                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #1883ba;padding: 0 10px 10px;text-align: center">
+                                        <a type="button" href="{URL}" style="text-decoration: none;color: #ffffff;font-size: 20px;"> Ver Cotizaci&oacute;n</a>
+
+                                    </td>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; height:200px;">
+                                <p style="margin: 0 0 10px;">{DESCRIPTION}</p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+        </table>
+        <!-- Email Body : END -->
+
+        <br>
+        <!-- Email Footer : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <!--                    <img src="https://residencial.linkom.mx/plantilla_mail/stylesheets/mailheader.png" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">-->
+                    <img src="https://linkom.mx/cotizaciones/plataforma/man/plantilla_mail/stylesheets/anuncio.gif" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #888888;">
+                    <br>
+                    <span class="unstyle-auto-detected-links" style=" font-weight: bold;color: #cccccc">Cualquier duda o sugerencia, ser&aacute; un placer atenderte</span>
+
+                    <br>
+                    <br>
+                    <span class="unstyle-auto-detected-links" style=" font-weight: bold;">QRO: 442.690.6176 | CMDX: 55.1209.8488 | MTY: 814.170.8286</span>
+                    <br>
+                    <br>
+                    <br>
+                    <unsubscribe style="color: #888888; text-decoration: underline;"> <a href="https://info.linkom.mx/post.php?id=48" target="_blank" style="color:#fff"> Aviso de Privacidad </a> </unsubscribe>
+                </td>
+            </tr>
+        </table>
+        <!-- Email Footer : END -->
