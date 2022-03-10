@@ -60,7 +60,8 @@ npm-debug.log*
 /plataforma/mani/plantilla_files
 /plataforma/mani/plantilla_mail
 
-/plataforma/modelo
+#/plataforma/modelo
+
 /plataforma/pdf
 /plugins
 /www
