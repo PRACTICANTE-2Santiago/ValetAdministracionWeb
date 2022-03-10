@@ -62,7 +62,9 @@ npm-debug.log*
 
 #/plataforma/modelo
 
-/plataforma/pdf
+#/plataforma/pdf
+/plataforma/pdf/fpdf
+
 /plugins
 /www
 /node_modules
