@@ -51,7 +51,15 @@ npm-debug.log*
 
 
 
-/plataforma/mani
+#/plataforma/mani
+/plataforma/mani/code
+/plataforma/mani/codeqr
+/plataforma/mani/controlador
+/plataforma/mani/includes
+/plataforma/mani/mail
+/plataforma/mani/plantilla_files
+/plataforma/mani/plantilla_mail
+
 /plataforma/modelo
 /plataforma/pdf
 /plugins
