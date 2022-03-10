@@ -42,12 +42,12 @@ npm-debug.log*
 
 #/plataforma/man
 #/plataforma/man/code
-/plataforma/man/codeqr
-/plataforma/man/controlador
-/plataforma/man/includes
-/plataforma/man/mail
-/plataforma/man/plantilla_files
-/plataforma/man/plantilla_mail
+#/plataforma/man/codeqr
+#/plataforma/man/controlador
+#/plataforma/man/includes
+#/plataforma/man/mail
+#/plataforma/man/plantilla_files
+#/plataforma/man/plantilla_mail
 
 
 
