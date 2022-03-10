@@ -41,7 +41,7 @@ npm-debug.log*
 #/plataforma/js
 
 #/plataforma/man
-/plataforma/man/code
+#/plataforma/man/code
 /plataforma/man/codeqr
 /plataforma/man/controlador
 /plataforma/man/includes
