@@ -24,9 +24,9 @@ npm-debug.log*
 /.versions
 /.vscode
 /node_modules
-/.well-known
-/controlador
-/js
+#/.well-known
+#/controlador
+#/js
 #/plataforma/cliente/code
 #/plataforma/cliente/codeqr
 #/plataforma/cliente/controlador
