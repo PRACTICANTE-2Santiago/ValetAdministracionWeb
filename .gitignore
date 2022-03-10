@@ -27,7 +27,15 @@ npm-debug.log*
 /.well-known
 /controlador
 /js
-/plataforma/cliente
+/plataforma/cliente/code
+/plataforma/cliente/codeqr
+/plataforma/cliente/controlador
+/plataforma/cliente/fpdf
+/plataforma/cliente/includes
+/plataforma/cliente/mail
+/plataforma/cliente/plantilla_files
+/plataforma/cliente/plantilla_mail
+
 /plataforma/css
 /plataforma/fonts
 /plataforma/js
