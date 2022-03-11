@@ -53,7 +53,8 @@ include('controlador/ctl_comercios.php');
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Representante</th>
-                         
+                                <th>Tarifa</th>
+                                <th>Total Creditos</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -70,7 +71,8 @@ include('controlador/ctl_comercios.php');
                                 <td><?php echo $come['id']?></td>
                                 <td><?php echo $come['nombre'] ?></td>
                                 <td><?php echo $come['representante']?></td>
-                             
+                                <td></td>
+                                <td></td>
                                 <td> <?php if($come['estatus']== 1){ ?>
                                     <button type="button" class="btn btn-info" title="Actualizar" <?php echo irA('comercio.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-pencil"></span> </button>
                                     <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('comercio_info.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>

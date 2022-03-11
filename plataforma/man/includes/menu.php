@@ -15,7 +15,7 @@
                         Datos <span class="caret"></span>
                     </a>
                 </div>
-                <div class="accordion-body collapse <?php echo isset($pa) ? $pa == 'comunidad' ? 'in': '' :''; ?>" id="collapseDatos">
+                <div class="accordion-body <?php echo isset($pa) ? $pa == 'comunidad' ? 'in': '' :''; ?>" id="collapseDatos">
 
 
                     <a href="usuarios.php?esta=1">
@@ -53,7 +53,7 @@
                         Reportes <span class="caret"></span>
                     </a>
                 </div>
-                <div class="accordion-body collapse <?php echo isset($pa) ? $pa == 'comunidad' ? 'in': '' :''; ?>" id="collapseReportes">
+                <div class="accordion-body  <?php echo isset($pa) ? $pa == 'comunidad' ? 'in': '' :''; ?>" id="collapseReportes">
 
 
                     <a href="reportes.php?esta=1">
