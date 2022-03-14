@@ -7,6 +7,37 @@ include('controlador/ctl_comercios.php');
 <head>
     <!-- Head HTML -->
     <?php include('includes/head.php') ?>
+    <style>
+        .ventana{
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(2px);
+            border-radius: none;
+            display: none ;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            left: 0%;
+            position: fixed;
+            top: 0%;
+            z-index: 1000;
+        }
+        .form{
+            border-radius: 30px;
+            background-color: #ecececd9;
+            width: 40%;
+            height: 60%;
+            margin: 20px;
+            padding: 30px;
+            color: #424242e6;
+            top: 10%;
+            left: 30%;
+            right: 30%;
+            position: absolute;
+        }
+        .btnModal {
+            margin: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,11 +102,12 @@ include('controlador/ctl_comercios.php');
                                 <td><?php echo $come['id']?></td>
                                 <td><?php echo $come['nombre'] ?></td>
                                 <td><?php echo $come['representante']?></td>
-                                <td></td>
+                                <td><?php echo $come['tarifa']?></td>
                                 <td></td>
                                 <td> <?php if($come['estatus']== 1){ ?>
                                     <button type="button" class="btn btn-info" title="Actualizar" <?php echo irA('comercio.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-pencil"></span> </button>
                                     <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('comercio_info.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>
+                                    <a href="javascript:openModal();"><button type="button" class="btn btn-warning" title="Editar Tarifa"> <span class="glyphicon glyphicon-usd"></span> </button></a>
 
                                     <button type="button" class="btn btn-danger" title="Desactivar" <?php echo irA('controlador/ctl_comercios.php?m=3&st=0&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-trash"></span> </button>
                                     <?php }else{ ?>
@@ -94,6 +126,27 @@ include('controlador/ctl_comercios.php');
             </div>
         </div>
     </div>
+
+
+    <div class="ventana">
+        <div class="form form-group">
+            <a href="javascript:closeModal();">X</a>
+            <header><h1>Gestor de Tarifas</h1></header>
+            <form action="" method="">
+                <br>
+                <!--<h4>Modificar Tarifa</h4>-->
+                <label for="focusedinput">Nuevo precio $</label>
+                <input class="form-control" type="number" placeholder="00.00">
+
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary btnModal" title="Registrar usuario">Guardar</button>
+                <input type="button" class="btn btn-danger btnModal" value="Cancelar" onClick="jacascript:closeModal();">
+            </form>
+        </div>
+    </div>
+
+
     <!-- EO Contenido -->
     <!-- EO Row Principal -->
     <!-- Container Principal -->
@@ -105,3 +158,13 @@ include('controlador/ctl_comercios.php');
 </body>
 
 </html>
+
+<script type="text/javascript">
+    function openModal(){
+        $(".ventana").slideDown("slow");
+    }
+    function closeModal(){
+        $(".ventana").slideUp("fast");
+    }
+
+</script>

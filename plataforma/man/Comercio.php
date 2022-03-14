@@ -131,7 +131,7 @@ include('controlador/ctl_comercios.php');
                                     <div class="form-group">
                                         <label for="focusedinput">Tarifa</label>
 
-                                        <input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" required="required">
+                                        <input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" value="<?php echo $admin['tarifa'];?>" required="required">
 
                                     <div class="clearfix"></div>
                                     </div>
@@ -148,7 +148,7 @@ include('controlador/ctl_comercios.php');
                                     <div class="form-group">
                                         <label for="focusedinput">Nombre Completo Representante</label>
 
-                                        <input type="text" class="form-control" name="representante" id="route" placeholder="Representante" required="required">
+                                        <input type="text" class="form-control" name="representante" id="route" placeholder="Representante" value="<?php echo $admin['representante'];?>" required="required">
 
                                         <div class="clearfix"></div>
                                     </div>
@@ -166,7 +166,7 @@ include('controlador/ctl_comercios.php');
                                     <div id='valCorreo'>
                                         <div class="form-group">
                                             <label for="focusedinput">N&uacute;mero Celular</label>
-                                            <input type="number" class="form-control"  id="celular" name="num_celular" placeholder="N&uacute;mero Celular" value="<?php echo $admin[''];?>" >
+                                            <input type="number" class="form-control"  id="celular" name="num_celular" placeholder="N&uacute;mero Celular" value="<?php echo $admin[NULL];?>" >
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
@@ -305,15 +305,15 @@ include('controlador/ctl_comercios.php');
 
                                 <br>
 
-<div class="fo-top">
-<div class="form-group">
-<label for="focusedinput">Tarifa</label>
+                                <div class="fo-top">
+                                    <div class="form-group">
+                                    <label for="focusedinput">Tarifa</label>
 
-<input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" required="required">
+                                    <input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" required="required">
 
-<div class="clearfix"></div>
-</div>
-</div>
+                                    <div class="clearfix"></div>
+                                    </div>
+                                </div>
 
                                 
                                 <!--<h4 style="color:#418bca; font-weight:bold;text-align:center">DATOS DE SISTEMA</h4>
