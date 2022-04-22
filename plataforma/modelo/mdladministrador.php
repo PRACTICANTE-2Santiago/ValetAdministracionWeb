@@ -30,9 +30,9 @@ class AdminModel extends DBAbstractModel {
 		.(isset($this->paterno) ? " and paterno = '".$this->paterno."'" : "")
         .(isset($this->materno) ? " and materno = '".$this->materno."'" : "")
 		.(isset($this->correo_electronico) ? " and correo_electronico = '".$this->correo_electronico."'" : "")
+		.(isset($this->telefono) ? " and telefono = '".$this->telefono."'" : "")
 		.(isset($this->usuario) ? " and usuario = '".$this->usuario."'" : "")
 		.(isset($this->contrasenia) ? " and contrasenia = '".$this->contrasenia."'" : "")
-        .(isset($this->telefono) ? " and telefono = '".$this->telefono."'" : "")
         .(isset($this->fecha_registro) ? " and fecha_registro = '".$this->fecha_registro."'" : "")
 		." group by id order by id asc";
         $this->getResultsFromQuery();
@@ -71,14 +71,15 @@ class AdminModel extends DBAbstractModel {
 	
 	public function edit(){
 		$this->query = "UPDATE administradores set " 
-                         .(isset($this->tipo_usuario) ? " tipo_usuario = ".$this->tipo_usuario.", " : '')
+                        
 						.(isset($this->nombre) ? "nombre = '".$this->nombre."', " : '')
-						.(isset($this->a_paterno) ? "a_paterno = '".$this->a_paterno."', " : '')
-						.(isset($this->a_materno) ? "a_materno = '".$this->a_materno."', ": '')
-						.(isset($this->telefono) ? "telefono = '".$this->telefono."', ": '')
+						.(isset($this->paterno) ? "paterno = '".$this->paterno."', " : '')
+						.(isset($this->materno) ? "materno = '".$this->materno."', ": '')
 						.(isset($this->correo_electronico) ? "correo_electronico = '".$this->correo_electronico."', " : '')
+						.(isset($this->telefono) ? "telefono = '".$this->telefono."', ": '')
 						.(isset($this->usuario) ? "usuario = '".$this->usuario."', " : '')
 						.(isset($this->contrasenia) ? "contrasenia = '".$this->contrasenia."', " : '')
+						.(isset($this->fecha_registro) ? "fecha_registro = '".$this->fecha_registro."', " : '')
 						."estatus = ".$this->estatus." "
 						."where id = ".$this->id;
 			return $this->executeSingleQuery2();

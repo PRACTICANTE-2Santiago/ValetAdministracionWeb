@@ -82,14 +82,6 @@ include('controlador/ctl_valet.php');
                                     </div>
                                 </div>
 
-                               
-
-
-
-                                <br>
-
-
-
                                 <div class="fo-top">
 
                                     <div class="fo-top">
@@ -108,7 +100,6 @@ include('controlador/ctl_valet.php');
                                         </div>
                                     </div>
 
-
                                     <div class="fo-top">
                                         <div class="form-group">
                                             <label for="focusedinput">Representante</label>
@@ -116,8 +107,7 @@ include('controlador/ctl_valet.php');
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
-
-
+            
                                     <br>
 
                                     <button type="submit" class="btn btn-primary pull-right" title="Registrar usuario">Guardar</button>
@@ -126,6 +116,7 @@ include('controlador/ctl_valet.php');
 
 
                         </form>
+
                         <?php
         		}		
         	}
@@ -232,6 +223,7 @@ include('controlador/ctl_valet.php');
                 <?php	
         } ?>
             </div>
+            
             <!-- EO Contenido -->
         </div>
         <!-- EO Row Principal -->

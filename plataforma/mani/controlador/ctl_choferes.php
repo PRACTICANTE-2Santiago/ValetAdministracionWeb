@@ -52,7 +52,7 @@ if(isset($_GET['m'])){
 		if(sizeof($_POST) >0){
             
 			 $agregar = new ChoferModel();
-			 $agregar->id_valet = $_GET['idvalet'];				
+			 $agregar->id_valet = $_GET['idvalet'];		
              $agregar->usuario = $_POST['usuario'];
              $agregar->contrasenia = $_POST['contrasena'];
              $agregar->nombre = $_POST['nombre'];

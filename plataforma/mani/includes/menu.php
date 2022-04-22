@@ -31,10 +31,10 @@
                     <a href="creditos.php?esta=1">
                         <div class="accordion-inner">Creditos</div>
                     </a>
-
-                    <a href="admincreditos.php?esta=1">
-                        <div class="accordion-inner">Renta de Creditos</div>
+                    <a href="pedidos.php?esta=1">
+                        <div class="accordion-inner">Pedidos</div>
                     </a>
+                   
 
                  
 

@@ -1,12 +1,14 @@
 <?php session_start(); ?>
 <?php
-include('controlador/ctl_choferes.php');
+include('controlador/ctl_pedido.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Head HTML -->
     <?php include('includes/head.php') ?>
+    <?php include('includes/oldspice.php') ?>
 </head>
 
 <body>
@@ -25,62 +27,65 @@ include('controlador/ctl_choferes.php');
             <!-- Contenido -->
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <?php 
-                include('includes/alertas.php');
-
+            include('includes/alertas.php');
           ?>
                 <h2 class="sub-header">
 
-                    <button type="button" name="nvousu" class="btn btn-primary" title="Nuevo Chofer" <?php echo irA('chofer.php', 2); ?>>
-                        <span class="glyphicon glyphicon-plus-sign"></span> Nuevo
-                    </button> Choferes
+                Verificar Pedidos
+                  
                 </h2>
                 <br>
 
                 <?php $estat = (isset($_GET['esta']) ? $_GET['esta'] : 1); ?>
-                <h4 class="text-right">
-                    <button type="button" class="btn btn-success" onclick="location.href='choferes.php?esta=1';"> Activos( <?php echo traeEstatusChofer(1,$_SESSION['idvalet']); ?> ) </button>
 
-                    <button type="button" class="btn btn-danger" onclick="location.href='choferes.php?esta=0';"> Inactivos( <?php echo traeEstatusChofer(0,$_SESSION['idvalet']); ?> ) </button>
+                <h4 class="text-right">
+                    <button type="button" class="btn btn-success" onclick="location.href='pedidos.php?esta=1';"> Pedidos en Espera( <?php echo traeEstatusPedido(1); ?> ) </button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='pedidos.php?esta=0';"> Pedidos Aprobados( <?php echo traeEstatusPedido(0); ?> ) </button>
+
                 </h4>
                 <br>
                 <br>
+                </h4>
+                <h1 align="center" style="font-weight: bold;">
+    <?php  if($_GET['esta']==0){echo"Inactivos";}
+        else if($_GET['esta']==1){echo"Activos";}
+?>
+ </h1>
+
 
                 <div class="table-responsive">
                     <table id="filtro" class="table table-striped table-bordered dataTable">
                         <thead>
                             <tr>
                                 <th>Estado</th>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Correo El&eacute;ctronico</th>
-                                <th>Usuario</th>
+                                <th>Plan</th>
+                                <th>Costo</th>
+                                <th>Valet</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- en el tr despues de una insercion o una modificacion, se remarcara la fila con success o warning -->
                             <?php 
-                             $empleados = traeChoferes(0,$_SESSION['idvalet'], $estat);
+                             $empleados = traePedidos(0, $estat);
 														if(sizeof($empleados) > 0){
-															foreach($empleados as $chofer){
+															foreach($empleados as $usua){
                                                                 
                										 ?>
                             <tr>
-                                <?php echo estatusAdmTabla($chofer['estatus']); ?>
-                                <td><?php echo $chofer['id']?></td>
-                                <td><?php echo $chofer['nombre'].' '.$chofer['apellido_paterno'].' '.$chofer['apellido_materno'] ?></td>
-                                <td><?php echo $chofer['correo_electronico']?></td>
-                                <td><?php echo $chofer['usuario']?></td>
+                                <?php echo estatusAdmTabla($usua['estatus']); ?>
+                                <td><?php echo $usua['plan']?></td>
+                                <td><?php echo $usua['costo']?></td>
+                                <td><?php echo $usua['id_valet']?></td>
                                 <td>
-                                    <?php if($chofer['estatus']== 1){ ?>
-                                    <button type="button" class="btn btn-info" title="Actualizar" <?php echo irA('chofer.php?edit=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-pencil"></span> </button>
-                                    <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('choferes_info.php?edit=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>
+                                    <?php if($usua['estatus']== 1){ ?>
 
-                                    <button type="button" class="btn btn-danger" title="Desactivar"
-                                    } <?php echo irA('controlador/ctl_choferes.php?m=3&st=0&id='.$chofer['id'], 2); ?>>
-                                     <span class="glyphicon glyphicon-trash"></span> </button>
+                                    <button type="button" class="btn btn-primary" title="verificar comprobante de pago" 
+                                    <?php echo irA('pedidosinfo.php?edit=1&id='.$usua['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> Verificar Pago </button>
+
+
                                     <?php }else{ ?>
-                                    <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_choferes.php?m=3&st=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
+                                    <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_pedido.php?m=3&st=1&id='.$usua['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
                                     <?php }?>
                                 </td>
                             </tr>

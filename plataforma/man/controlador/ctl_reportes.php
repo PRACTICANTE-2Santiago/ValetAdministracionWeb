@@ -9,12 +9,12 @@ if(isset($_GET['m'])){
 }
 
 
-function traerAuto($id ,$id_valet, $estatus){
+function traerAuto($id ,$id_comercios, $estatus){
     $usua = new AutoModel();	
 	if($id > 0){
 		$usua->setId($id);
 	}else{
-		($id_valet > -1 ? $usua->id_valet = $id_valet : '');
+		($id_comercios > -1 ? $usua->id_comercios = $id_comercios : '');
 		($estatus > -1 ? $usua->estatus = $estatus : '');
 	}
 	$usua->get();
@@ -32,12 +32,12 @@ function traerAuto($id ,$id_valet, $estatus){
 	}
 }
 
-function traerAutos($id ,$id_valet,$fecha, $estatus){
+function traerAutos($id ,$id_comercios,$fecha, $estatus){
     $usua = new AutoModel();	
 	if($id > 0){
 		$usua->setId($id);
 	}else{
-		($id_valet > -1? $usua->id_valet = $id_valet : '');
+		($id_comercios > -1? $usua->id_comercios = $id_comercios : '');
 		($fecha != ''? $usua->mes = $fecha : '');
 		//($fecha != ''  ? $usua->fecha_nu = $fecha : '');
 		($estatus > -1 ? $usua->estatus = $estatus : '');
@@ -57,10 +57,10 @@ function traerAutos($id ,$id_valet,$fecha, $estatus){
 	}
 }
 
-function traeEstatusAuto($estatus,$id_valet,$fecha){    if($estatus>-1){
+function traeEstatusAuto($estatus,$id_comercios,$fecha){    if($estatus>-1){
 		$contTip = new AutoModel();
 		$contTip->estatus = $estatus;
-		$contTip->id_valet = $id_valet;
+		$contTip->id_comercios = $id_comercios;
 		$contTip->mes = $fecha;
 		$contTip->get();
 		return sizeof($contTip->rows);

@@ -5,7 +5,8 @@ require_once ('DBAbstractModel.php');
 class AutoModel extends DBAbstractModel{
 	
 	private $id;
-	public $id_valet;
+	public $id_comercios;
+	public $id_chofer;
 	public $placas;
     public $descripcion;
 	public $foto1;
@@ -13,7 +14,6 @@ class AutoModel extends DBAbstractModel{
 	public $foto3;
 	public $id_registro;
 	public $fecha_registro;
-	public $fecha_nu;
 	public $id_ubicacion;
 	public $latitud;
 	public $longitud;
@@ -22,8 +22,8 @@ class AutoModel extends DBAbstractModel{
 	public $fecha_pedir;
 	public $id_entrega;
 	public $fecha_entregado;
-	public $fecha_notificado;
 	public $comentarios_entregado;
+	public $fecha_notificado;
 	public $comentarios_cliente;
 	public $token;
 	public $condiciones;
@@ -38,7 +38,8 @@ class AutoModel extends DBAbstractModel{
 		}
 	}else{
         $this->query = "SELECT * FROM automovil where "
-        .(isset($this->id_valet) ? " id_valet = ".$this->id_valet : ' id_valet > 0 ')
+		.(isset($this->id_comercios) ? " id_comercios = ".$this->id_comercios  : ' id_comercios  > 0 ')
+	
         .(isset($this->placas) ? " and placas = '".$this->placas."'" : "")	
         .(isset($this->descripcion) ? " and descripcion = '".$this->descripcion."'" : "")	
         .(isset($this->foto1) ? " and foto1 = '".$this->foto1."'" : "")	
@@ -55,8 +56,8 @@ class AutoModel extends DBAbstractModel{
         .(isset($this->fecha_pedir) ? "and fecha_pedir = '".$this->fecha_pedir."', " : '')
         .(isset($this->id_entrega) ? " and id_entrega = ".$this->id_entrega : '')
         .(isset($this->fecha_entregado) ? "and fecha_entregado = '".$this->fecha_entregado."', " : '')
-        .(isset($this->fecha_notificado) ? "and fecha_notificado = '".$this->fecha_notificado."', " : '')
-        .(isset($this->comentarios_entregado) ? " and comentarios_entregado = '".$this->comentarios_entregado."'" : "")	
+		.(isset($this->comentarios_entregado) ? " and comentarios_entregado = '".$this->comentarios_entregado."'" : "")	
+		.(isset($this->fecha_notificado) ? "and fecha_notificado = '".$this->fecha_notificado."', " : '')
         .(isset($this->comentarios_cliente) ? " and comentarios_cliente = '".$this->comentarios_cliente."'" : "")	
         .(isset($this->token) ? " and token = '".$this->token."'" : "")	
 		.(isset($this->condiciones) ? " and condiciones = ".$this->condiciones : "")

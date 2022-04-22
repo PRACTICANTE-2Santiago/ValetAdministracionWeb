@@ -66,7 +66,7 @@ include('controlador/ctl_choferes.php');
                                                                 
                										 ?>
                             <tr>
-                                <?php echo estatusAdmTabla($chofer['estatus']); ?>
+                                <?php echo  traeEstatusChofer($chofer['estatus']); ?>
                                 <td><?php echo $chofer['id']?></td>
                                 <td><?php echo $chofer['nombre'].' '.$chofer['apellido_paterno'].' '.$chofer['apellido_materno'] ?></td>
                                 <td><?php echo $chofer['correo_electronico']?></td>
@@ -76,9 +76,7 @@ include('controlador/ctl_choferes.php');
                                     <button type="button" class="btn btn-info" title="Actualizar" <?php echo irA('chofer.php?edit=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-pencil"></span> </button>
                                     <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('choferes_info.php?edit=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>
 
-                                    <button type="button" class="btn btn-danger" title="Desactivar"
-                                    } <?php echo irA('controlador/ctl_choferes.php?m=3&st=0&id='.$chofer['id'], 2); ?>>
-                                     <span class="glyphicon glyphicon-trash"></span> </button>
+                                    <button type="button" class="btn btn-danger" title="Desactivar" <?php echo irA('controlador/ctl_choferes.php?m=3&st=0&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-trash"></span> </button>
                                     <?php }else{ ?>
                                     <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_choferes.php?m=3&st=1&id='.$chofer['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
                                     <?php }?>

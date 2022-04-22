@@ -34,12 +34,12 @@ include('controlador/ctl_reportes.php');
                 <br>
 
                 <?php  $fe= date('Y-m-d'); ?>
-                <ul class="nav nav-tabs" style="font-size:17px; font-weight:bold;">
-                    <li class="active"><a data-toggle="tab" href="#recibir">Recibir ( <?php echo traeEstatusAuto(1,$_SESSION['idvalet'],$fe) ?> )</a></li>
-                    <li><a data-toggle="tab" href="#estacionar">Estacionar ( <?php echo traeEstatusAuto(2,$_SESSION['idvalet'],$fe); ?> )</a></li>
-                    <li><a data-toggle="tab" href="#recoger">Recoger ( <?php echo traeEstatusAuto(3,$_SESSION['idvalet'],$fe); ?> )</a></li>
-                    <li><a data-toggle="tab" href="#entregados">Entregados ( <?php echo traeEstatusAuto(4,$_SESSION['idvalet'],$fe); ?> )</a></li>
-                </ul>
+                    <ul class="nav nav-tabs" style="font-size:17px; font-weight:bold;">
+                        <li class="active"><a data-toggle="tab" href="#recibir">Recibir ( <?php echo traeEstatusAuto(1,$_SESSION['idvalet'],$fe) ?> )</a></li>
+                        <li><a data-toggle="tab" href="#estacionar">Estacionar ( <?php echo traeEstatusAuto(2,$_SESSION['idvalet'],$fe); ?> )</a></li>
+                        <li><a data-toggle="tab" href="#recoger">Recoger ( <?php echo traeEstatusAuto(3,$_SESSION['idvalet'],$fe); ?> )</a></li>
+                        <li><a data-toggle="tab" href="#entregados">Entregados ( <?php echo traeEstatusAuto(4,$_SESSION['idvalet'],$fe); ?> )</a></li>
+                    </ul>
                 <div class="tab-content">
                     <!--Usuarios Residencial: Administrador-->
                     <div id="recibir" class="tab-pane fade in active">

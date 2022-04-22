@@ -76,103 +76,88 @@ include('controlador/ctl_comercios.php');
                 <h3 class="page-header"> Datos >> <a href="Comercios.php"> Comercios </a> </h3>
 
                 <h2 class="sub-header" style="text-aling: center;">Modificar Comercio</h2>
+                <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="row">
                     <br>
                     <form role="form" name="nvoproducto" method="post" enctype="multipart/form-data" action="controlador/ctl_comercios.php?m=2&id=<?php echo $admin['id']; ?>">
+                    <div class="form-group">
+                                        <label for="focusedinput">nombre</label>
 
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                            <section id="section-1" class="content-current">
-                                <h4 style="color:#418bca; font-weight:bold;text-align:center">DATOS DEL NEGOCIO</h4>
-                                <br>
-                                <div style="border-style: dotted; border-color: #418bca;"> </div>
-                                <br>
-                                <div class="fo-top">
-                                    <div class="form-group">
-                                        <label for="focusedinput">Nombre</label>
-
-                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $admin['nombre'];?>" required="required">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" required="required"value="<?php echo $admin['nombre'];?>" >
 
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>
-                                <div class="fo-top">
-                                    <div class="form-group">
-                                        <label for="focusedinput">Logotipo</label>
-                                        <input type="file" class="upload"  />
+                                <div class="form-group">
+                                        <label for="focusedinput">razonsocial</label>
+
+                                        <input type="text" class="form-control" name="razonsocial" id="razonsocial" placeholder="razonsocial" required="required" value="<?php echo $admin['razonsocial'];?>">
+
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>
+                               
+                     
+                                    
                                 <div class="fo-top">
                                     <div class="form-group">
                                         <label for="focusedinput">Calle</label>
 
-                                        <input type="text" class="form-control" name="calle" id="route" placeholder="Calle" required="required" value="<?php echo $admin['calle'];?>">
+                                        <input type="text" class="form-control" name="calle" id="calle" placeholder="Calle" required="required"value="<?php echo $admin['calle'];?>">
 
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>    
+                                </div>
+                                
                                 <div class="fo-top">
                                     <div class="form-group">
 
                                         <label for="focusedinput">C.P</label>
 
-                                        <input type="text" class="form-control" name="codigo" id="postal_code" placeholder="C&oacute;digo Postal" value="<?php echo $admin['codigo_postal'];?>" required="required" minlength="5" maxlength="5">
+                                        <input type="text" class="form-control" name="codigo_postal" id="codigo_postal" placeholder="C&oacute;digo Postal" required="required" minlength="5" maxlength="5" value="<?php echo $admin['codigo_postal'];?>">
                                         <div class="clearfix"></div>
+
                                     </div>
                                 </div>
                                 <div class="fo-top">
                                     <div class="form-group">
                                         <label for="focusedinput">Tel&eacute;fono</label>
-                                        <input type="text" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" placeholder="4428528766" value="<?php echo $admin['telefono'];?>" required="required">
+                                        <input type="text" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" placeholder="4428528766" required="required" value="<?php echo $admin['telefono'];?>">
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                                 <div class="fo-top">
-                                    <div class="form-group">
-                                        <label for="focusedinput">Tarifa</label>
+                  
+                                        <div class="form-group">
+                                            <label for="focusedinput">Correo Electr&oacute;nico</label>
+                                            <input type="text" class="form-control"  id="correo_electronico" name="correo_electronico" required="required" value="<?php echo $admin['correo_electronico'];?>">
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                   
 
-                                        <input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" value="<?php echo $admin['tarifa'];?>" required="required">
+                                 <br>
+
+                                 
+                                 <div class="fo-top">
+                                    <div class="form-group">
+                                    <label for="focusedinput">Representante</label>
+
+                                    <input type="text" class="form-control" name="represent" id="represent," placeholder="Tarifa" required="required" value="<?php echo $admin['representante'];?>">
+
+                                    <div class="clearfix"></div>
+                                    </div>
+
+                                <br>
+
+                                <div class="fo-top">
+                                    <div class="form-group">
+                                    <label for="focusedinput">Tarifa</label>
+
+                                    <input type="text" class="form-control" name="tarifa" id="tarifa," placeholder="Tarifa" required="required" value="<?php echo $admin['tarifa'];?>">
 
                                     <div class="clearfix"></div>
                                     </div>
                                 </div>
-                            </section>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-                            <section id="section-1" class="content-current">
-                                <h4 style="color:#418bca; font-weight:bold;text-align:center">DATOS PERSONALES REPRESENTANTE</h4>
-                                <br>
-                                <div style="border-style: dotted; border-color: #418bca;"> </div>
-                                <br>
-                                <div class="fo-top">
-                                    <div class="form-group">
-                                        <label for="focusedinput">Nombre Completo Representante</label>
-
-                                        <input type="text" class="form-control" name="representante" id="route" placeholder="Representante" value="<?php echo $admin['representante'];?>" required="required">
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                                <div class="fo-top">
-                                    <div id='valCorreo'>
-                                        <div class="form-group">
-                                            <label for="focusedinput">Correo Electr&oacute;nico</label>
-                                            <input type="mail" class="form-control" onchange="verificar_correo();" id="correo" name="correo" placeholder="Correo Electr&oacute;nico" value="<?php echo $admin['correo_electronico'];?>" required="required">
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fo-top">
-                                    <div id='valCorreo'>
-                                        <div class="form-group">
-                                            <label for="focusedinput">N&uacute;mero Celular</label>
-                                            <input type="number" class="form-control"  id="celular" name="num_celular" placeholder="N&uacute;mero Celular" value="<?php echo $admin[NULL];?>" >
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br> 
-                                <br>
+                   
                                 <!--<h4 style="color:#418bca; font-weight:bold;text-align:center">DATOS DE SISTEMA</h4>
                                 <br>
                                 <div class="fo-top">
@@ -218,46 +203,38 @@ include('controlador/ctl_comercios.php');
 
 
                 <h2 class="sub-header">Registrar Comercio</h2>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
+              
                         <br>
 
                         <form role="form" name="nvoproducto" method="post" enctype="multipart/form-data" action="controlador/ctl_comercios.php?m=1<?php echo '&idvalet='.$_SESSION['idvalet'].'&tipo='.$_SESSION['idtipo']; ?>">
-                            <section id="section-1" class="content-current">
-                                <h4 style="color:#418bca; font-weight:bold;text-align:center">DATOS PERSONALES</h4>
+                        <br>
+                       
+                                   
+                               
+                               
                                 <br>
-                                <div class="col-sm-4">
-                                    <div class="fo-top">
-                                        <div class="form-group">
-                                            <label for="focusedinput">Nombre</label>
+                                <div class="form-group">
+                                        <label for="focusedinput">nombre</label>
 
-                                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" required="required">
 
-                                            <div class="clearfix"></div>
-                                        </div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                </div>
+                                <div class="form-group">
+                                        <label for="focusedinput">razonsocial</label>
 
-                                <br>
-                                <br>
-                                <div style="border-style: dotted; border-color: #418bca;"> </div>
-                                <br>
-                                <div class="fo-top">
-                                    <div class="form-group">
-                                        <label for="focusedinput">Logotipo</label>
-                                        <input type="file" class="upload"  />
-                                    <div class="clearfix"></div>
-                                </div>
+                                        <input type="text" class="form-control" name="razonsocial" id="razonsocial" placeholder="razonsocial" required="required">
+
+                                        <div class="clearfix"></div>
                                     </div>
-
-                                    <br>
-                                <div style="border-style: dotted; border-color: #418bca;"> </div>
-                                <br>
+                               
+                     
+                                    
                                 <div class="fo-top">
                                     <div class="form-group">
                                         <label for="focusedinput">Calle</label>
 
-                                        <input type="text" class="form-control" name="calle" id="route" placeholder="Calle" required="required">
+                                        <input type="text" class="form-control" name="calle" id="calle" placeholder="Calle" required="required">
 
                                         <div class="clearfix"></div>
                                     </div>
@@ -268,7 +245,7 @@ include('controlador/ctl_comercios.php');
 
                                         <label for="focusedinput">C.P</label>
 
-                                        <input type="text" class="form-control" name="codigo" id="postal_code" placeholder="C&oacute;digo Postal" required="required" minlength="5" maxlength="5">
+                                        <input type="text" class="form-control" name="codigo_postal" id="codigo_postal" placeholder="C&oacute;digo Postal" required="required" minlength="5" maxlength="5">
                                         <div class="clearfix"></div>
 
                                     </div>
@@ -284,11 +261,16 @@ include('controlador/ctl_comercios.php');
                                     <div id='valCorreo'>
                                         <div class="form-group">
                                             <label for="focusedinput">Correo Electr&oacute;nico</label>
-                                            <input type="mail" class="form-control" onchange="verificar_correo();" id="correo" name="correo" placeholder="Correo Electr&oacute;nico" required="required">
+                                            <input type="mail" class="form-control" onchange="verificar_correo();" id="correo_electronico" name="correo_electronico" placeholder="Correo Electr&oacute;nico" required="required">
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
                                 </div>
+                                Select image to upload:
+                                      <input type="file" name="image"/>
+                            
+                               
+                                    
 
                                  <br>
 
@@ -296,7 +278,7 @@ include('controlador/ctl_comercios.php');
                                     <div class="form-group">
                                         <label for="focusedinput">Representante</label>
 
-                                        <input type="text" class="form-control" name="representante" id="route" placeholder="Representante" required="required">
+                                        <input type="text" class="form-control" name="representante" id="representante" placeholder="Representante" required="required">
 
                                         <div class="clearfix"></div>
                                     </div>
@@ -309,7 +291,7 @@ include('controlador/ctl_comercios.php');
                                     <div class="form-group">
                                     <label for="focusedinput">Tarifa</label>
 
-                                    <input type="text" class="form-control" name="tarifa" id="route" placeholder="Tarifa" required="required">
+                                    <input type="text" class="form-control" name="tarifa" id="tarifa," placeholder="Tarifa" required="required">
 
                                     <div class="clearfix"></div>
                                     </div>

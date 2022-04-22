@@ -37,11 +37,11 @@ function traeValet($id , $estatus){
 	}
 }
 
-function traeAuto($id ,$id_valet, $estatus){	$usua = new AutoModel();	
+function traeAuto($id ,$id_comercios, $estatus){	$usua = new AutoModel();	
 	if($id > 0){
 		$usua->setId($id);
 	}else{
-		($id_valet > -1 ? $usua->id_valet = $id_valet : '');
+		($id_comercios > -1 ? $usua->id_comercios = $id_comercios : '');
 		($estatus > -1 ? $usua->estatus = $estatus : '');
 	}
 	$usua->get();
@@ -116,14 +116,14 @@ if(isset($_GET['m'])){
                 
                 //residentes	
                                 $valet = new ValetModel(); 
-                                $valet->setId();  
+                                $valet->setId($_GET['id']);  
 								$valet->estatus = 1; 
 								$valet->get();
                 
                
                                 $auto = new AutoModel(); 
                                 $auto->setId($_GET['id']);  
-								$auto->id_valet = $_GET['id_val'];     
+								$auto->id_comercios = $_GET['id_comercios'];     
 								$auto->get();
                 
 								$choferes = new ChoferModel(); 
@@ -161,7 +161,7 @@ if(isset($_GET['m'])){
 						}
 								
                 
-                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'], 1);
+                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'].'&id_comercios='.$_GET['id_comercios'], 1);
                 
            }else{
                  echo irA('../detalle.php?np=18&so=0', 1);
@@ -178,7 +178,7 @@ if(isset($_GET['m'])){
              $modificar->comentarios_cliente = $_POST['comentarios'];
 		     $modificar->estatus = 4;
             if($modificar->edit()){//modificar datos formacion
-                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'], 1);
+                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'].'&id_comercios='.$_GET['id_comercios'], 1);
                 
            }else{
                  echo irA('../detalle.php?np=18&so=0', 1);
@@ -194,7 +194,8 @@ if(isset($_GET['m'])){
         
                                 $auto_info = new AutoModel(); 
                                 $auto_info->setId($_GET['id']);  
-								$auto_info->id_valet = $_GET['id_val'];     
+								$auto_info->id_valet = $_GET['id_val'];    
+								$auto_info->id_comercios = $_GET['id_comercios'];     
 								$auto_info->get();
         
            
@@ -215,7 +216,7 @@ if(isset($_GET['m'])){
                         
                                 $auto = new AutoModel(); 
                                 $auto->setId($_GET['id']);  
-								$auto->id_valet = $_GET['id_val'];     
+								$auto->id_comercios = $_GET['id_comercios'];     
 								$auto->get();
                 
 								$choferes = new ChoferModel(); 
@@ -252,17 +253,17 @@ if(isset($_GET['m'])){
 							  curl_close( $ch );							
 						}
                        
-                        echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'], 1);
+                        echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'].'&id_comercios='.$_GET['id_comercios'], 1);
 
                     }else{
-                        echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'], 1);
+                        echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'].'&id_comercios='.$_GET['id_comercios'], 1);
                   
                     }
                                
                 
                 
            }else{
-                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'], 1);
+                 echo irA('../detalle.php?id_val='.$_GET['id_val'].'&id='.$_GET['id'].'&id_comercios='.$_GET['id_comercios'], 1);
            }             
     }
 }

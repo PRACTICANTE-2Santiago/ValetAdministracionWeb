@@ -85,7 +85,7 @@ include('controlador/ctl_comercios.php');
                                 <th>Nombre</th>
                                 <th>Representante</th>
                                 <th>Tarifa</th>
-                                <th>Total Creditos</th>
+                                <th>Logotipo</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -97,19 +97,23 @@ include('controlador/ctl_comercios.php');
 															foreach($empleados as $come){
                                                                 
                										 ?>
+             
                             <tr>
                                 <?php echo estatusAdmTabla($come['estatus']); ?>
                                 <td><?php echo $come['id']?></td>
                                 <td><?php echo $come['nombre'] ?></td>
                                 <td><?php echo $come['representante']?></td>
                                 <td><?php echo $come['tarifa']?></td>
-                                <td></td>
+                                <td><?php echo '<img height="80" width="80"
+                                 src="data:image/jpeg;base64,'.base64_encode($come["logotipo"]).'"/>'; ?></td>
+
                                 <td> <?php if($come['estatus']== 1){ ?>
                                     <button type="button" class="btn btn-info" title="Actualizar" <?php echo irA('comercio.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-pencil"></span> </button>
                                     <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('comercio_info.php?edit=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>
-                                    <a href="javascript:openModal();"><button type="button" class="btn btn-warning" title="Editar Tarifa"> <span class="glyphicon glyphicon-usd"></span> </button></a>
 
-                                    <button type="button" class="btn btn-danger" title="Desactivar" <?php echo irA('controlador/ctl_comercios.php?m=3&st=0&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-trash"></span> </button>
+                                    <button type="button" class="btn btn-danger" title="Desactivar"
+                                     <?php echo irA('controlador/ctl_comercios.php?m=3&st=0&id='.$come['id'], 2); ?>>
+                                      <span class="glyphicon glyphicon-trash"></span> </button>
                                     <?php }else{ ?>
                                     <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_comercios.php?m=3&st=1&id='.$come['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
                                     <?php }?>
@@ -126,21 +130,26 @@ include('controlador/ctl_comercios.php');
             </div>
         </div>
     </div>
+ 
 
-
+  
     <div class="ventana">
         <div class="form form-group">
             <a href="javascript:closeModal();">X</a>
             <header><h1>Gestor de Tarifas</h1></header>
-            <form action="" method="">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
                 <br>
+                
                 <!--<h4>Modificar Tarifa</h4>-->
-                <label for="focusedinput">Nuevo precio $</label>
-                <input class="form-control" type="number" placeholder="00.00">
+                <h1>Registro Actualizado</h1>
+               
+                <br>
+                <label for="focusedinput">Nuevo Precio $</label>
+                <input class="form-control"  name="tarifa" id="tarifa"  type="number" placeholder="00.00">
 
                 <br>
                 <br>
-                <button type="submit" class="btn btn-primary btnModal" title="Registrar usuario">Guardar</button>
+                <input type="submit" name="submit" value="UPLOAD" onclick="location.href='Comercios.php?';"/>
                 <input type="button" class="btn btn-danger btnModal" value="Cancelar" onClick="jacascript:closeModal();">
             </form>
         </div>

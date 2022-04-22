@@ -167,17 +167,7 @@ include('controlador/ctl_valet.php');
                             <form role="form" name="nvovalet" method="post" enctype="multipart/form-data" action="controlador/ctl_valet.php?m=1">
                                 <section id="section-1" class="content-current">
                                
-                                    <label for="cars">Selecciona un valet:</label>
-
-<select name="cars" id="cars">
-<option value="volvo">valet</option>
-  <option value="volvo">Banco</option>
-  <option value="saab">Walmart</option>
-  <option value="mercedes">Mariscos</option>
-  <option value="audi">Nisan</option>
-</select>
-
-                                  
+                                               
 
 <label for="cars">Selecciona un credito:</label>
 
@@ -186,13 +176,29 @@ include('controlador/ctl_valet.php');
   <option value="volvo">Premium</option>
   <option value="saab">Standart</option>
   <option value="mercedes">Basic</option>
-
+<br>
 </select>
-
+<form role="form" name="nvovalet" method="post" enctype="multipart/form-data" action="controlador/ctl_valet.php?m=1">
+                                <section id="section-1" class="content-current">
+                                
+                                <div class="fo-top">
+                                        <div class="form-group">
+                                            <label for="focusedinput">Precio</label>
+                                            <input type="text" class="form-control" name="id_pin" id="id_pin" value="<?php echo $total?>" required="required" readonly>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                <div class="fo-top">
+                                        <div class="form-group">
+                                            <label for="focusedinput">Creditos</label>
+                                            <input type="text" class="form-control" name="id_pin" id="id_pin" value="<?php echo $total?>" required="required" readonly>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
 
                                     <br>
 
-                                    <button type="button"class="btn btn-primary" title="Nuevo Valet" <?php echo irA('admincreditos.php', 2); ?>>
+                                    <button type="button"class="btn btn-primary" title="Nuevo Valet" <?php echo irA('valet.php', 2); ?>>
                         <span class="glyphicon glyphicon-plus-sign"></span> Asignar
                     </button>                                  </section>
                             </form>

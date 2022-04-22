@@ -37,13 +37,17 @@ include('controlador/ctl_valet.php');
                 </h2>
                 <br>
 
-                <?php $estat = (isset($_GET['esta']) ? $_GET['esta'] : 1); ?>
+                <?php $estat = (isset($_GET['estaus']) ? $_GET['estaus'] : 1); ?>
                 <h4 class="text-right">
                     <button type="button" id="boton_uno" class="btn btn-success" onclick="location.href='valetes.php?esta=1';"> Activos( <?php echo traeEstatusValet(1); ?> ) </button>
 
                     <button type="button" id="boton_dos" class="btn btn-danger" onclick="location.href='valetes.php?esta=0';"> Inactivos( <?php echo traeEstatusValet(0); ?> ) </button>
                 </h4>
-
+                <h1 align="center" style="font-weight: bold;">
+    <?php  if($_GET['estaus']==0){echo"Inactivos";}
+        else if($_GET['estaus']==1){echo"Activos";}
+?>
+ </h1>
                 <script>
                     function myFunction() {
 
@@ -77,11 +81,10 @@ include('controlador/ctl_valet.php');
                         <thead>
                             <tr>
                                 <th>Estado</th>
-                                <th>Id</th>
-                                <th>PIN</th>
                                 <th>Nombre</th>
                                 <th>Correo El&eacute;ctronico</th>
                                 <th>Representante</th>
+                                
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -94,8 +97,8 @@ include('controlador/ctl_valet.php');
                										 ?>
                             <tr>
                                 <?php echo estatusAdmTabla($valet['estatus']); ?>
-                                <td><?php echo $valet['id']?></td>
-                                <td><?php echo $valet['id_pin']?></td>
+                            
+                              
                                 <td><?php echo $valet['nombre'] ?></td>
                                 <td><?php echo $valet['correo_electronico']?></td>
                                 <td><?php echo $valet['representante']?></td>
@@ -124,7 +127,9 @@ include('controlador/ctl_valet.php');
 
                                     <?php } ?>
 
-                                    <button type="button" class="btn btn-danger" title="Desactivar" <?php echo irA('controlador/ctl_valet.php?m=3&st=0&id='.$valet['id'], 2); ?>> <span class="glyphicon glyphicon-trash"></span> </button>
+                                    <button type="button" class="btn btn-danger" title="Desactivar" 
+                                    <?php echo irA('controlador/ctl_valet.php?m=3&st=0&id='.$valet['id'], 2); 
+                                    ?>> <span class="glyphicon glyphicon-trash"></span> </button>
                                     <?php }else{ ?>
                                     <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_valet.php?m=3&st=1&id='.$valet['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
                                     <?php }?>
@@ -141,6 +146,8 @@ include('controlador/ctl_valet.php');
             </div>
         </div>
     </div>
+
+
     <!-- EO Contenido -->
     <!-- EO Row Principal -->
     <!-- Container Principal -->

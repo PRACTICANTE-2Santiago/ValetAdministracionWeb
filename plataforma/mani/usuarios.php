@@ -85,7 +85,9 @@ include('controlador/ctl_administrador.php');
                                     <button type="button" class="btn btn-primary" title="Ver" <?php echo irA('usuario_info.php?edit=1&id='.$usua['id'], 2); ?>> <span class="glyphicon glyphicon-eye-open"></span> </button>
 
 
-                                    <button type="button" class="btn btn-danger" title="Desactivar" <?php echo irA('controlador/ctl_administrador.php?m=3&st=0&id='.$usua['id'], 2); ?>> <span class="glyphicon glyphicon-trash"></span> </button>
+                                    <button type="button" class="btn btn-danger" title="Desactivar"
+                                     <?php echo irA('controlador/ctl_administrador.php?m=3&st=0&id='.$usua['id'], 2); ?>>
+                                      <span class="glyphicon glyphicon-trash"></span> </button>
                                     <?php }else{ ?>
                                     <button type="button" class="btn btn-success" title="Reactivar" <?php echo irA('controlador/ctl_administrador.php?m=3&st=1&id='.$usua['id'], 2); ?>> <span class="glyphicon glyphicon-refresh"></span> </button>
                                     <?php }?>

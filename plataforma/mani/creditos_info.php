@@ -1,9 +1,10 @@
 <?php session_start(); ?>
 <?php
-include('controlador/ctl_comercios.php');
+include('controlador/ctl_creditos.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Head HTML -->
     <?php include('includes/head.php');
@@ -35,85 +36,47 @@ include('controlador/ctl_comercios.php');
 
         ?>
                 <?php
-                $come=  traeComercios($_GET['id'],$_SESSION['idvalet'] ,1);
+                $usu=  traeUsuarios($_GET['id'], '', -1);
 
-                        if(sizeof($come) > 0){
+                        if(sizeof($usu) > 0){
 			
 		?>
-                <h3 class="page-header">Datos >> <a href="Comercios.php?esta=1">Comercios</a> </h3>
+                <h3 class="page-header">Datos >> <a href="creditos.php?esta=1">Creditos</a> </h3>
 
 
-                <h2 class="sub-header"><?php echo 'Nombre: '.$come['nombre']; ?></h2>
+                <h2 class="sub-header"><?php echo 'Nombre: '.$usu['nombre']; ?></h2>
 
 
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6">
 
 
-                    
-                    <div class="form-group">
-                            <div class="col-sm-7 col-md-5 col-lg-3 text-right">
-                                <label for="titulo">Nombre: </label>
-                            </div>
-                            <?php echo $come['nombre']; ?>
-                        </div>
-
-                    <div class="form-group">
-                            <div class="col-sm-7 col-md-5 col-lg-3 text-right">
-                                <label for="titulo">Calle: </label>
-                            </div>
-                            <?php echo $come['calle']; ?>
-                        </div>
-                       
-
-
+              
                         <div class="form-group">
                             <div class="col-sm-7 col-md-5 col-lg-3 text-right">
-                                <label for="titulo">codigo_postal: </label>
+                                <label for="titulo">Precio </label>
                             </div>
-                            <?php echo $come['codigo_postal']; ?>
+                            <?php echo $usu['costo']; ?>
                         </div>
-                       
-
-
+                        <br>
                         <div class="form-group">
                             <div class="col-sm-7 col-md-5 col-lg-3 text-right">
-                                <label for="titulo">Representante: </label>
+                                <label for="titulo">Servicios </label>
                             </div>
-                            <?php echo $come['representante']; ?>
+                            <?php echo $usu['servicios']; ?>
                         </div>
-                      
-
-
-
-
-
                         <div class="form-group">
                             <div class="col-sm-7 col-md-5 col-lg-3 text-right">
-                                <label for="titulo">Correo El&eacute;ctronico: </label>
+                                <label for="titulo">Aviso: </label>
                             </div>
-                            <?php echo $come['correo_electronico']; ?>
+                            <?php echo $usu['aviso']; ?>
                         </div>
-                      
-                        
-
-                           
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-                            <section id="section-1" class="content-current">
-                                <h4 style="color:#418bca; font-weight:bold;text-align:center">LOGOTIPO</h4>
-                                <br>
-                                <div style="border-style: dotted; border-color: #418bca;"> </div>
-                                <br>
-                               
-                     
-                                <br>
-                                <?php echo '<img height="200" width="200"
-                                 src="data:image/jpeg;base64,'.base64_encode($come["logotipo"]).'"/>'; ?>
-
-                                </div>
-
-
-
+                        <div class="form-group">
+                            <div class="col-sm-7 col-md-5 col-lg-3 text-right">
+                                <label for="titulo">Cancelaciones: </label>
+                            </div>
+                            <?php echo $usu['cancelaciones']; ?>
+                        </div>
 
 
 

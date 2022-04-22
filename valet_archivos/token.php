@@ -8,7 +8,7 @@ if(isset($token) && isset($id_usuario)){
   
     //$query = 'UPDATE automovil SET token = "'.$token.'"  WHERE id = "'.$id_usuario.'" and id_residencial=1';
     $query = 'UPDATE automovil SET token = "'.$token.'"  WHERE id = "'.$id_usuario.'" ';
- $result = mysqli_query($conn,$query) or die('error: ' .mysql_error());
+ $result = mysqli_query($conn,$query) or die('error: '.mysqli_error($error));
 
 if($result == TRUE){
     echo "success"; 

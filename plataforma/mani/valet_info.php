@@ -1,6 +1,11 @@
 <?php session_start(); ?>
 <?php
 include('controlador/ctl_valet.php');
+
+?>
+<?php
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,8 +78,65 @@ include('controlador/ctl_valet.php');
                         </div>
                         
                             
+                        <h2 class="page-header">Datos Choferes </h2>
+                        
+                <?php $estat = (isset($_GET['esta']) ? $_GET['esta'] : 1); ?>
+                
+                <br>
+                <br>
 
+                <div class="table-responsive">
+                    <table id="filtro" class="table table-striped table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>Estado</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Correo El&eacute;ctronico</th>
+                                <th>Usuario</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- en el tr despues de una insercion o una modificacion, se remarcara la fila con success o warning -->
+                            <?php 
+                             $empleados = traeChoferes(0,$estat);
+														if(sizeof($empleados) > 0){
+															foreach($empleados as $chofer){
+                                                                
+               										 ?>
+                            <tr>
+                                <?php echo estatusAdmTabla($chofer['estatus']); ?>
+                                <td><?php echo $chofer['id']?></td>
+                                <td><?php echo $chofer['nombre'].' '.$chofer['apellido_paterno'].' '.$chofer['apellido_materno'] ?></td>
+                                <td><?php echo $chofer['correo_electronico']?></td>
+                                <td><?php echo $chofer['usuario']?></td>
+                              
+                            </tr>
+                            <?php  }
+                            }else{
+                                echo "<tr><td colspan='7'><h5 class='text-center'>No Hay resultados para mostrar</h5></td></tr>";
+                            }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="page-header">Reporte </h2>
+                <div class="table-responsive">
+                            <table id="filtro" class="table table-striped table-bordered dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Placas</th>
+                                        <th>Fecha</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+            </div>
+        </div>
+    </div>
 
+                     
 
 
 

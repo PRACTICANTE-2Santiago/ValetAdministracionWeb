@@ -3,21 +3,21 @@ if(isset($_GET['m'])){
 	include('../../miscelaneos.php');
     include('../../modelo/mdlvalet.php');
     include('../../modelo/mdlusuario.php');
-	include('../../modelo/mdlchofer.php');
+	include('../../modelo/mdlcompra.php');
 }else{
 	include('../miscelaneos.php');  
     include('../modelo/mdlvalet.php');
     include('../modelo/mdlusuario.php');
-	include('../modelo/mdlchofer.php');
+	include('../modelo/mdlcompra.php');
 }
 
 
-function traeChoferes($id , $estatus){
-	$chof = new ChoferModel();	
+function traePedidos($id , $estatus){
+	$chof = new CompraModel ();	
 	if($id > 0){
 		$chof->setId($id);
 	}else{
-
+	
 		($estatus > -1 ? $chof->estatus = $estatus : '');
 	}
 	$chof->get();
@@ -35,11 +35,11 @@ function traeChoferes($id , $estatus){
 	}
 }
 
-function traeEstatusChofer($estatus,$id_valet){
+function traeEstatusPedido($estatus){
 	if($estatus>-1){
-		$contTip = new ChoferModel();
+		$contTip = new CompraModel ();
 		$contTip->estatus = $estatus;
-		$contTip->id_valet = $id_valet;
+		
 		$contTip->get();
 		return sizeof($contTip->rows);
 	}else{
@@ -49,8 +49,8 @@ function traeEstatusChofer($estatus,$id_valet){
 
 
 
-function traeUsuarios($id ,$id_valet, $estatus){
-	$usua = new UsuarioModel();	
+function traePedido($id ,$id_valet, $estatus){
+	$usua = new CompraModel ();	
 	if($id > 0){
 		$usua->setId($id);
 	}else{
@@ -73,7 +73,7 @@ function traeUsuarios($id ,$id_valet, $estatus){
 }
 
 function traeValet($id ,$nombre, $estatus){
-	$valet = new ValetModel();	
+	$valet = new CompraModel ();	
 	if($id > 0){
 		$valet->setId($id);
 	}else{
@@ -97,7 +97,7 @@ function traeValet($id ,$nombre, $estatus){
 
 function traeEstatusValet($estatus){
 	if($estatus>-1){
-		$contTip = new ValetModel();
+		$contTip = new CompraModel ();
 		$contTip->estatus = $estatus;
 		$contTip->get();
 		return sizeof($contTip->rows);
@@ -112,15 +112,14 @@ function traeEstatusValet($estatus){
 if(isset($_GET['m'])){
 	if($_GET['m'] == 1){ //insertar datos personales
 		if(sizeof($_POST) >0){
-            
-			 $modificar = new ValetModel();
-			 $modificar->id_pin = $_POST['id_pin'];			
-             $modificar->nombre = $_POST['nombre'];
-             $modificar->calle = $_POST['calle'];
-             $modificar->num_ext = $_POST['num_ext'];
-             $modificar->num_int = ($_POST['num_int'] != '' ? $_POST['num_int'] : 0);
-             $modificar->colonia = $_POST['colonia'];
-             $modificar->municipio = $_POST['municipio'];           
+			$id= $_SESSION['idvalet'] ;
+			 $modificar = new CompraModel ();
+			 $modificar->id_valet = $_GET['id_valet'];			
+             $modificar->plan = $_POST['plan'];
+             $modificar->costo = $_POST['costo'];
+             $modificar->servicios = $_POST['servicios'];
+             $modificar->cancelaciones = $_POST['cancelaciones'];
+             $modificar->comporbante = $_POST['comporbante'];           
              $modificar->estado = $_POST['estado'];             
              $modificar->pais = $_POST['pais'];
 			 $modificar->codigo_postal = $_POST['codigo_postal'];
@@ -144,7 +143,7 @@ if(isset($_GET['m'])){
 		if(isset($_GET['id']) && sizeof($_POST)>0){ 
             
            
-             $modificar = new ValetModel();
+             $modificar = new CompraModel ();
              $modificar->setId($_GET['id']);  
 			 $modificar->id_pin = $_POST['id_pin'];			
              $modificar->nombre = $_POST['nombre'];
@@ -175,13 +174,13 @@ if(isset($_GET['m'])){
 		if(isset($_GET['id']) && isset($_GET['st'])){
 			if($_GET['id'] > 0 && $_GET['st'] > -1){
                 
-				$modiTipo = new ValetModel();
+				$modiTipo = new CompraModel ();
 				$modiTipo->setId($_GET['id']);
 				$modiTipo->estatus = $_GET['st'];
 				if($modiTipo->edit()){
-                    echo irA('../valetes.php?esta='.$_GET['st'].'&err=2&so=2&np=18', 1);
+                    echo irA('../pedidos.php?esta='.$_GET['st'].'&err=2&so=2&np=18', 1);
                   }else{
-                     echo irA('../valetes.php?esta='.$_GET['st'].'&err=0&so=0&np=18', 1);
+                     echo irA('../pedidos.php?esta='.$_GET['st'].'&err=0&so=0&np=18', 1);
                   }
 					        
 		}else{
