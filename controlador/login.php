@@ -87,7 +87,7 @@ if(isset($_POST['usua']) && isset($_POST['pwd']) && isset($_POST['pin'])){
                             $_SESSION['intentos'] = 0;
                             $usuario->_destruct();
                             
-                            if($_SESSION['idtipo']=='1'){
+                            if($_SESSION['idtipo']=='01'){
                                echo irA('../plataforma/man/inicio.php', 1, 0);                  
                             }
                         }else{ //tipo de usuario incorrecto, agregamos el contador de intentos
